@@ -101,6 +101,7 @@ function setupFlipLogic() {
           clearInterval(timerInterval);
           showMessage("🎉 You Win!");
           disableAllCards();
+          $('#powerUpBtn').prop('disabled', true);
         }
 
         updateStatsDisplay();
@@ -150,6 +151,7 @@ function startTimer(seconds) {
       clearInterval(timerInterval);
       showMessage("⏱️ Time's up! Game Over.");
       disableAllCards();
+      $('#powerUpBtn').prop('disabled', true);
     }
   }, 1000);
 }
@@ -236,10 +238,9 @@ $(document).ready(() => {
         }
       });
       setupFlipLogic();
-    }, 1000); // 1 second reveal
+    }, 1000);
   });
 
-  // Light/Dark Mode Toggle
   $('#themeToggle').on('click', () => {
     $('body').toggleClass('dark-mode');
   });
