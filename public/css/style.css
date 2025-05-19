@@ -1,42 +1,130 @@
+
 body {
-  margin: 0px;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+
 #game_grid {
-  border: 2px tomato solid;
-  width: 600px;
-  height: 400px;
+  display: none;
+  width: 100%;
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  justify-content: center;
+  border: none;
 }
 
 
 .card {
-  width: 33.3%;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 120px;
   position: relative;
-  transition: transform 1s;
-  perspective: 1000px;
   transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
 }
 
-
-img {
-  width: 100%
-}
-
-.front_face,
-.back_face {
+.card img {
+  width: 100%;
+  height: 100%;
   position: absolute;
   backface-visibility: hidden;
+  border-radius: 8px;
 }
-
-
-.flip {
-  transform: rotateY(180deg);
-}
-
 
 .front_face {
   transform: rotateY(180deg);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+
+body.dark-mode,
+body.dark-mode * {
+  color: #f1f1f1 !important;
+}
+
+
+body.dark-mode .text-danger {
+  color: #ff6b6b !important;
+}
+
+body.dark-mode .text-success {
+  color: #4cd964 !important;
+}
+
+body.dark-mode .text-muted {
+  color: #bbbbbb !important;
+}
+
+
+body.dark-mode .navbar {
+  background-color: #1e1e1e !important;
+  border-bottom: 1px solid #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+body.dark-mode .btn {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #f1f1f1 !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .btn:hover {
+  background-color: #3a3a3a;
+  border-color: #666;
+}
+
+body.dark-mode .btn:disabled {
+  opacity: 0.5;
+  background-color: #1a1a1a;
+  color: #aaa;
+  border-color: #333;
+}
+
+body.dark-mode .btn-warning {
+  background-color: #b68d00;
+  border-color: #b68d00;
+  color: #fff !important;
+}
+
+body.dark-mode .btn-info {
+  background-color: #0099cc;
+  border-color: #0088bb;
+  color: #fff !important;
+}
+
+
+body.dark-mode .card {
+  background-color: #292929;
+  border: 1px solid #444;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+
+body.dark-mode #game_grid {
+  border-color: #888;
+}
+
+
+body.dark-mode #status_bar div,
+body.dark-mode #game_message,
+body.dark-mode .text-center {
+  color: #f1f1f1 !important;
 }

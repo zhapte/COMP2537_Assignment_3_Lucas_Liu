@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('components/head') %>
+  <body class="d-flex flex-column min-vh-100">
+
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+      <div class="container-fluid justify-content-between px-3">
+        <span class="navbar-brand mb-0 h1">Pokémon Game</span>
+        <button id="themeToggle" class="btn btn-outline-secondary btn-sm">
+          Toggle Theme
+        </button>
+      </div>
+    </nav>
+
+    <!-- Game Content -->
+    <div class="container text-center py-5">
+      <h1 class="mb-4">Pokémon Memory Game</h1>
+
+      <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
+        <div id="difficulty_controls" class="d-flex gap-2 flex-wrap justify-content-center">
+          <button class="btn btn-outline-primary difficulty active" data-pairs="3">Easy</button>
+          <button class="btn btn-outline-secondary difficulty" data-pairs="6">Medium</button>
+          <button class="btn btn-outline-danger difficulty" data-pairs="10">Hard</button>
+        </div>
+
+        <button id="startBtn" class="btn btn-warning">Start Game</button>
+        <button id="resetBtn" class="btn btn-outline-dark d-none">Reset</button>
+        <button id="powerUpBtn" class="btn btn-info d-none">Reveal All (1s)</button>
+      </div>
+
+      <div id="status_bar" class="mb-3 d-flex justify-content-center gap-4 flex-wrap text-center">
+        <div><strong>🖱️ Clicks:</strong> <span id="click_count">0</span></div>
+        <div><strong>✅ Matches:</strong> <span id="matched_count">0</span> / <span id="total_pairs">0</span></div>
+        <div><strong>⏱️ Time:</strong> <span id="timer" class="text-danger fw-bold">0s</span></div>
+      </div>
+
+      <div id="game_message" class="text-danger fw-bold text-center mt-2"></div>
+
+      <div id="game_grid"></div>
+    </div>
+
+    <footer class="mt-auto text-center py-3">
+      <p class="mb-0">© 2025 Pokémon Memory Game</p>
+    </footer>
+  </body>
+</html>
